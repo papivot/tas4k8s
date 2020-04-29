@@ -1,1 +1,13 @@
-# tas4k8s
+# TANZU APPLICATION SERVIVCE FOR KUBERNETES
+---
+
+## Prerequisits 
+* `kubectl`
+* `bosh`
+* `kapp`
+* `kbld`
+* `ytt`
+* `cf`
+
+
+
