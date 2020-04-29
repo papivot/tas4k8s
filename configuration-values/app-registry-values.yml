@@ -4,4 +4,4 @@ app_registry:
   hostname: https://index.docker.io/v1/
   repository: "whoami6443"
   username: "whoami6443"
-  password: "Anjana1234"
+  password: "Password"
