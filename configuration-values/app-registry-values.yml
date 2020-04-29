@@ -1,0 +1,7 @@
+#@data/values
+---
+app_registry:
+  hostname: https://index.docker.io/v1/
+  repository: "tas4k8s"
+  username: "whoami6443"
+  password: "Anjana1234"
