@@ -38,7 +38,7 @@ Use the value to update DNS with *.sys.navneetv.com
 ### Login 
 ```
 cd tas
-cf api api.PLACEHOLDER-SYSTEM-DOMAIN --skip-ssl-validation
+cf api api.sys.navneetv.com --skip-ssl-validation
 CF_ADMIN_PASSWORD="$(bosh interpolate ../configuration-values/deployment-values.yml --path /cf_admin_password)"
 cf auth admin "$CF_ADMIN_PASSWORD"
 cf enable-feature-flag diego_docker
@@ -53,7 +53,12 @@ cf target -o test-org -s test-space
 
 ### Download and cf push app
 ```
-
+cd ..
+git clone https://github.com/cloudfoundry-samples/test-app.git
+cd test-app
+cf push test-app --hostname test-app
+cf logs test-app
+curl test-app.sys.navneetv.com
 ```
 
 
