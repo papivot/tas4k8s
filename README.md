@@ -61,6 +61,10 @@ cf logs test-app
 curl test-app.sys.navneetv.com
 ```
 
+### Delete TAS
+```
+kapp delete -a cf
+```
 
 
 
