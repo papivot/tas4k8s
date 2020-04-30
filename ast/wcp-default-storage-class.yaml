@@ -1,0 +1,12 @@
+---
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: wcp-tas-storageclass
+  annotations:
+    storageclass.kubernetes.io/is-default-class: "true"
+parameters:
+  svStorageClass: nav-gold-policy
+provisioner: csi.vsphere.vmware.com
+reclaimPolicy: Delete
+volumeBindingMode: Immediate
