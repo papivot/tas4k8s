@@ -67,6 +67,13 @@ kapp delete -a cf
 ```
 ---
 ---
+Edit this file 
+./config/cf-for-k8s/config/_ytt_lib/github.com/cloudfoundry/cf-k8s-networking/config/istio-generated/xxx-generated-istio.yaml
+
+Once setup get the Loadbalancer IP and update the DNS - 
+```
+192.168.10.163 sys.navlab.io api.sys.navlab.io login.sys.navlab.io uaa.sys.navlab.io test-app.sys.navlab.io log-cache.sys.navlab.io
+```
 
 
 
