@@ -73,13 +73,10 @@ kapp delete -a cf
 
 * Make sure you have min 4 vCPU worker node(s).
 * Install the default storage class for WCP in the repo.
-* Follow steps till `Generate the configuration file with self signed certs`
-* Edit this file 
-`./config/cf-for-k8s/config/_ytt_lib/github.com/cloudfoundry/cf-k8s-networking/config/istio-generated/xxx-generated-istio.yaml`
-and remove the entry `externalTrafficPolicy: Local`
-* Reduce the CPU requests for fluentd and uaa
-`./config/cf-for-k8s/config/_ytt_lib/github.com/cloudfoundry/uaa/k8s/templates/values/_values.yml` and `./config/cf-for-k8s/config/_ytt_lib/github.com/cloudfoundry/cf-k8s-logging/config/500-fluentd-daemonset.yaml`
-* Run the install
+* Follow steps till `Generate the configuration file with self signed certs`.
+* Move the file `fix-externaltrafficpolicy.yml` from `custom-overloays-TODO` to the `custom-overlays` folder.
+* To resuce some resource requirements, move the file `remove-resource-requirements.yml` from the `custom-overloays-TODO` to the `custom-overlays` folder.
+* Run the install.
 * Once setup get the Loadbalancer IP and update the DNS for e.g.- 
 ```
 192.168.10.163 sys.navlab.io api.sys.navlab.io login.sys.navlab.io uaa.sys.navlab.io test-app.sys.navlab.io log-cache.sys.navlab.io
