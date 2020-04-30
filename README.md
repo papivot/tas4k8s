@@ -67,10 +67,19 @@ kapp delete -a cf
 ```
 ---
 ---
-Edit this file 
-./config/cf-for-k8s/config/_ytt_lib/github.com/cloudfoundry/cf-k8s-networking/config/istio-generated/xxx-generated-istio.yaml
 
-Once setup get the Loadbalancer IP and update the DNS - 
+### vSPhere 7 with K8s 
+---
+
+* Make sure you have min 4 vCPU worker node(s).
+* Follow steps till `Generate the configuration file with self signed certs`
+* Edit this file 
+`./config/cf-for-k8s/config/_ytt_lib/github.com/cloudfoundry/cf-k8s-networking/config/istio-generated/xxx-generated-istio.yaml`
+and remove the entry `externalTrafficPolicy: Local`
+* Reduce the CPU requests for fluentd and uaa
+`./config/cf-for-k8s/config/_ytt_lib/github.com/cloudfoundry/uaa/k8s/templates/values/_values.yml` and `./config/cf-for-k8s/config/_ytt_lib/github.com/cloudfoundry/cf-k8s-logging/config/500-fluentd-daemonset.yaml`
+* Run the install
+* Once setup get the Loadbalancer IP and update the DNS for e.g.- 
 ```
 192.168.10.163 sys.navlab.io api.sys.navlab.io login.sys.navlab.io uaa.sys.navlab.io test-app.sys.navlab.io log-cache.sys.navlab.io
 ```
