@@ -72,6 +72,7 @@ kapp delete -a cf
 ---
 
 * Make sure you have min 4 vCPU worker node(s).
+* Install the default storage class for WCP in the repo.
 * Follow steps till `Generate the configuration file with self signed certs`
 * Edit this file 
 `./config/cf-for-k8s/config/_ytt_lib/github.com/cloudfoundry/cf-k8s-networking/config/istio-generated/xxx-generated-istio.yaml`
