@@ -82,6 +82,24 @@ kapp delete -a cf
 192.168.10.163 sys.navlab.io api.sys.navlab.io login.sys.navlab.io uaa.sys.navlab.io test-app.sys.navlab.io log-cache.sys.navlab.io
 ```
 
+---
+
+### Using private registry for system images - 
+
+```
+docker login registry.pivotal.io -u nverma@pivotal.io  -p Passw0rd
+```
+
+Backup from the images from the Pivotal network - 
+```
+kbld package -f <(ytt \
+               -f config/image_overrides.yml \
+               -f config/values.yml ) \
+               --output /tmp/images.tar
+```
+This creates a file `/tmp/images.tar`
+
+
 
 
 
